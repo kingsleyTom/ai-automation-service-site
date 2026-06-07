@@ -47,6 +47,7 @@ For the full setup checklist, see:
 - `CONFIGURATION.md`
 - `OPERATIONS.md`
 - `QA.md`
+- `ROADMAP.md`
 
 ## Validate Locally
 
