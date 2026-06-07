@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kingsleytom.github.io/ai-automation-service-site/sitemap.xml

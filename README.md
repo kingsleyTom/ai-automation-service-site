@@ -3,6 +3,10 @@
 Public GitHub Pages site for the AI Lead Follow-up Automation service.
 
 This repository intentionally contains only the public-facing landing page and image asset.
+It also includes SEO support files for GitHub Pages sharing and indexing:
+
+- `robots.txt`
+- `sitemap.xml`
 
 Private operating materials, outreach templates, trackers, diagnostic templates, and delivery checklists are maintained in the private repository:
 

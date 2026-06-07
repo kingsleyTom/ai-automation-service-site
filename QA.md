@@ -13,7 +13,9 @@ scripts/validate_site.sh
 This checks:
 
 - Required files exist.
+- SEO files exist.
 - Stale placeholder contact text is absent.
+- Canonical, Open Graph, Twitter Card, and structured data tags exist.
 - Commerce and contact configuration object exists.
 - PayPal buttons exist for all three packages.
 - Intake form exists.
@@ -21,6 +23,8 @@ This checks:
 - Sample diagnostic workflow map exists.
 - FAQ and privacy note exist.
 - JavaScript syntax is valid.
+- `robots.txt` points to `sitemap.xml`.
+- `sitemap.xml` points to the live GitHub Pages URL.
 
 ## Configuration Checks
 

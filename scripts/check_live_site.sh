@@ -7,6 +7,10 @@ html="$(curl -fsSL "$site_url")"
 
 required_patterns=(
   "LeadFlow Cyber"
+  "<link rel=\"canonical\" href=\"https://kingsleytom.github.io/ai-automation-service-site/\">"
+  "property=\"og:title\""
+  "name=\"twitter:card\""
+  "application/ld+json"
   "Choose a paid workflow path"
   "Delivery flow after payment"
   "Sample diagnostic output"
@@ -28,5 +32,7 @@ for pattern in "${required_patterns[@]}"; do
 done
 
 curl -fsSI "$site_url" >/dev/null
+curl -fsSL "${site_url%/}/robots.txt" | grep -F "Sitemap: https://kingsleytom.github.io/ai-automation-service-site/sitemap.xml" >/dev/null
+curl -fsSL "${site_url%/}/sitemap.xml" | grep -F "<loc>https://kingsleytom.github.io/ai-automation-service-site/</loc>" >/dev/null
 
 echo "Live site check passed: $site_url"
