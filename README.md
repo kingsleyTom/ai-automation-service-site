@@ -42,6 +42,11 @@ Fill these values when ready:
 
 Until these links are configured, the live page shows safe "configuration needed" messaging instead of sending clients to broken payment or form URLs.
 
+For the full setup checklist, see:
+
+- `CONFIGURATION.md`
+- `OPERATIONS.md`
+
 ## Update Contact Link
 
 The current fallback contact link points to:
@@ -58,7 +63,7 @@ After editing:
 
 ```bash
 git status --short
-git add index.html README.md
+git add index.html README.md CONFIGURATION.md OPERATIONS.md .github/ISSUE_TEMPLATE/configuration_task.md
 git commit -m "Update commerce and contact configuration"
 git push
 ```
