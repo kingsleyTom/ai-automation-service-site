@@ -18,6 +18,18 @@ kingsleyTom/ai-automation-service-kit
 
 GitHub Pages serves `index.html` from the `main` branch root.
 
+Fast path after editing:
+
+```bash
+scripts/deploy_site.sh --message "Update public site"
+```
+
+Preview without staging, committing, or pushing:
+
+```bash
+scripts/deploy_site.sh --dry-run
+```
+
 ## Configure Commerce and Contact
 
 Open `index.html` and find the `siteConfig` object near the top of the `<script>` block:
@@ -93,7 +105,13 @@ Replace it with a real email, booking link, or contact form when ready.
 
 ## Publish Updates
 
-After editing:
+After editing, use the fast deploy script:
+
+```bash
+scripts/deploy_site.sh --message "Update commerce and contact configuration"
+```
+
+Manual fallback:
 
 ```bash
 git status --short

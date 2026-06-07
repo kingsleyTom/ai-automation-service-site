@@ -47,6 +47,20 @@ scripts/check_live_site.sh
 
 This confirms the GitHub Pages page is reachable and contains the expected production sections.
 
+## Fast Deployment
+
+Use the deployment script when you want validation, commit, push, and live check in one flow:
+
+```bash
+scripts/deploy_site.sh --message "Update public site"
+```
+
+Use dry-run mode first if you want to confirm the local validation result without staging anything:
+
+```bash
+scripts/deploy_site.sh --dry-run
+```
+
 ## Manual Browser Checks
 
 Desktop:

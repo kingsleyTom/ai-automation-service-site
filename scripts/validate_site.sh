@@ -11,6 +11,7 @@ test -f robots.txt
 test -f sitemap.xml
 test -f assets/automation-hero.png
 test -f scripts/configure_site.mjs
+test -f scripts/deploy_site.sh
 
 if grep -E "YOUR NAME|your\.email@example\.com|mailto:" index.html >/dev/null; then
   echo "Found stale placeholder contact text."
@@ -59,5 +60,6 @@ tmp_js="${TMPDIR:-/tmp}/leadflow-site-script.js"
 perl -0ne 'while(/<script>(.*?)<\/script>/sg){print $1}' index.html > "$tmp_js"
 node --check "$tmp_js" >/dev/null
 node --check scripts/configure_site.mjs >/dev/null
+bash -n scripts/deploy_site.sh
 
 echo "Site validation passed."
