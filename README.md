@@ -14,12 +14,53 @@ kingsleyTom/ai-automation-service-kit
 
 GitHub Pages serves `index.html` from the `main` branch root.
 
-## Update Contact
+## Configure Commerce and Contact
 
-The current contact link points to:
+Open `index.html` and find the `siteConfig` object near the top of the `<script>` block:
+
+```js
+const siteConfig = {
+  paypalLinks: {
+    diagnostic: "",
+    starter: "",
+    complete: ""
+  },
+  formspreeEndpoint: "",
+  bookingUrl: "",
+  contactFallbackUrl: "https://github.com/kingsleyTom"
+};
+```
+
+Fill these values when ready:
+
+- `paypalLinks.diagnostic`: PayPal link for the $99 diagnostic.
+- `paypalLinks.starter`: PayPal link for the $199 Starter Build.
+- `paypalLinks.complete`: PayPal link for the $499 Complete Workflow.
+- `formspreeEndpoint`: Formspree endpoint such as `https://formspree.io/f/xxxxxxx`.
+- `bookingUrl`: Calendly, TidyCal, or another scheduling link.
+- `contactFallbackUrl`: fallback contact URL.
+
+Until these links are configured, the live page shows safe "configuration needed" messaging instead of sending clients to broken payment or form URLs.
+
+## Update Contact Link
+
+The current fallback contact link points to:
 
 ```text
 https://github.com/kingsleyTom
 ```
 
 Replace it with a real email, booking link, or contact form when ready.
+
+## Publish Updates
+
+After editing:
+
+```bash
+git status --short
+git add index.html README.md
+git commit -m "Update commerce and contact configuration"
+git push
+```
+
+GitHub Pages will rebuild automatically from the `main` branch root.

@@ -703,6 +703,281 @@
         bottom: 14px;
       }
 
+      .commerce {
+        padding: 88px 0;
+        background:
+          radial-gradient(circle at 18% 16%, rgba(82, 228, 255, 0.18), transparent 25%),
+          linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
+      }
+
+      .config-alert {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 22px;
+        border: 1px solid rgba(255, 181, 69, 0.34);
+        border-radius: 8px;
+        padding: 14px 16px;
+        color: #7a4d06;
+        background: rgba(255, 244, 218, 0.86);
+      }
+
+      .config-alert strong {
+        color: #5f3b00;
+      }
+
+      .package-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .package-card {
+        position: relative;
+        min-height: 438px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(47, 107, 255, 0.14);
+        border-radius: 8px;
+        padding: 26px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 24px 58px rgba(35, 91, 221, 0.12);
+        overflow: hidden;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .package-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 6px;
+        background: linear-gradient(90deg, #65dcff, #2f6bff, #786dff);
+      }
+
+      .package-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 34px 78px rgba(35, 91, 221, 0.2);
+      }
+
+      .package-label {
+        width: fit-content;
+        border-radius: 999px;
+        padding: 7px 11px;
+        color: var(--blue);
+        background: rgba(47, 107, 255, 0.08);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .price {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin: 22px 0 8px;
+      }
+
+      .price strong {
+        font-size: 42px;
+        line-height: 1;
+      }
+
+      .price span {
+        color: var(--muted);
+      }
+
+      .package-card h3 {
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+
+      .package-card p,
+      .package-card li {
+        color: var(--muted);
+        line-height: 1.58;
+      }
+
+      .package-card ul {
+        margin: 18px 0 24px;
+        padding-left: 18px;
+      }
+
+      .package-card .btn {
+        width: 100%;
+        margin-top: auto;
+      }
+
+      .delivery {
+        padding: 86px 0;
+        color: #fff;
+        background:
+          radial-gradient(circle at 80% 26%, rgba(82, 228, 255, 0.18), transparent 24%),
+          linear-gradient(135deg, #08175c 0%, #0c2b8e 58%, #071a62 100%);
+      }
+
+      .delivery-grid {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
+        gap: 40px;
+        margin-top: 34px;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 14px;
+      }
+
+      .timeline-step {
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 8px;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(14px);
+      }
+
+      .timeline-step b {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: #0d2d8e;
+        background: #fff;
+      }
+
+      .timeline-step h3 {
+        margin: 0 0 6px;
+      }
+
+      .timeline-step p,
+      .status-card p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.74);
+        line-height: 1.58;
+      }
+
+      .status-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .status-card {
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 8px;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .status-card h3 {
+        margin: 0 0 10px;
+      }
+
+      .contact-section {
+        padding: 88px 0;
+        background: #fff;
+      }
+
+      .contact-layout {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.72fr) minmax(360px, 1fr);
+        gap: 44px;
+        align-items: start;
+        margin-top: 34px;
+      }
+
+      .contact-panel,
+      .intake-form {
+        border: 1px solid rgba(47, 107, 255, 0.14);
+        border-radius: 8px;
+        padding: 26px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 22px 54px rgba(35, 91, 221, 0.1);
+      }
+
+      .contact-panel h3,
+      .intake-form h3 {
+        margin-top: 0;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .field {
+        display: grid;
+        gap: 7px;
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        color: #34415f;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid rgba(47, 107, 255, 0.16);
+        border-radius: 8px;
+        padding: 12px 13px;
+        color: var(--ink);
+        background: #f8fbff;
+        outline: 0;
+      }
+
+      textarea {
+        min-height: 124px;
+        resize: vertical;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: rgba(47, 107, 255, 0.54);
+        box-shadow: 0 0 0 4px rgba(47, 107, 255, 0.08);
+      }
+
+      .form-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .toast {
+        position: fixed;
+        left: 50%;
+        bottom: 24px;
+        z-index: 70;
+        width: min(520px, calc(100% - 32px));
+        border: 1px solid rgba(47, 107, 255, 0.16);
+        border-radius: 8px;
+        padding: 16px 18px;
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 24px 70px rgba(9, 30, 94, 0.2);
+        transform: translate(-50%, 24px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 180ms ease, transform 180ms ease;
+      }
+
+      .toast.show {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+
       .news {
         padding: 88px 0 76px;
         background: #fff;
@@ -1026,7 +1301,11 @@
 
         .stack-grid,
         .mini-grid,
-        .product-stage {
+        .product-stage,
+        .package-grid,
+        .delivery-grid,
+        .status-grid,
+        .contact-layout {
           grid-template-columns: 1fr;
         }
 
@@ -1045,6 +1324,10 @@
 
         .partner-track {
           grid-template-columns: repeat(10, 160px);
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
         }
 
         .contact-rail {
@@ -1107,6 +1390,9 @@
           <a class="nav-link active" href="#home">Home</a>
           <a class="nav-link" href="#meta">Platform</a>
           <a class="nav-link" href="#products">Solutions</a>
+          <a class="nav-link" href="#packages">Pay</a>
+          <a class="nav-link" href="#delivery">Delivery</a>
+          <a class="nav-link" href="#contact">Contact</a>
           <a class="nav-link" href="#news">Insights</a>
           <a class="nav-link" href="#partners">Partners</a>
         </nav>
@@ -1124,7 +1410,7 @@
             <p id="heroText">Capture new inquiries, classify intent, draft replies, and log CRM updates through one calm automation layer built for small teams.</p>
             <div class="hero-actions">
               <a class="btn primary" href="#products">Explore solutions <span aria-hidden="true">-></span></a>
-              <button class="btn ghost" data-open-contact>Start diagnostic</button>
+              <button class="btn ghost" data-booking>Start diagnostic</button>
             </div>
             <div class="hero-dots" aria-label="Hero slides">
               <button class="dot active" data-hero-slide="0" aria-label="Show lead workflow slide"></button>
@@ -1206,10 +1492,101 @@
             <article class="feature-panel" id="featurePanel">
               <h3 id="featureTitle">Lead data platform</h3>
               <p id="featureText">New inquiries are captured, cleaned, classified, drafted, and sent to the right destination with review controls.</p>
-              <button class="btn" data-open-contact>Learn more</button>
+              <button class="btn" data-booking>Book diagnostic</button>
               <div class="feature-cloud" aria-hidden="true"><span></span></div>
             </article>
             <div class="side-panel" id="rightPanel">Risk control</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="commerce" id="packages">
+        <div class="shell">
+          <div class="reveal">
+            <h2 class="section-title">Choose a paid workflow path</h2>
+            <p class="section-copy">Each package has a clear delivery promise. Payment buttons connect to PayPal once links are configured.</p>
+            <div class="config-alert" id="configAlert" hidden>
+              <span aria-hidden="true">!</span>
+              <div>
+                <strong>Configuration needed.</strong>
+                PayPal, Formspree, and booking links are not configured yet. The UI is live, but client actions will show setup guidance until links are added.
+              </div>
+            </div>
+          </div>
+
+          <div class="package-grid">
+            <article class="package-card reveal" data-package-card="diagnostic">
+              <span class="package-label">24h diagnostic</span>
+              <div class="price"><strong>$99</strong><span>one-time</span></div>
+              <h3>Workflow Diagnostic</h3>
+              <p>Map the workflow, identify the highest-impact automation, and credit the fee toward implementation.</p>
+              <ul>
+                <li>Workflow map</li>
+                <li>Risk notes</li>
+                <li>Build recommendation</li>
+              </ul>
+              <button class="btn primary" data-pay="diagnostic">Pay with PayPal</button>
+            </article>
+
+            <article class="package-card reveal" data-package-card="starter">
+              <span class="package-label">2-day build</span>
+              <div class="price"><strong>$199</strong><span>starter</span></div>
+              <h3>Starter Build</h3>
+              <p>Build one focused automation with a trigger, an AI step, a destination, and three documented tests.</p>
+              <ul>
+                <li>One trigger source</li>
+                <li>One AI classification or draft step</li>
+                <li>One destination and handoff guide</li>
+              </ul>
+              <button class="btn primary" data-pay="starter">Pay with PayPal</button>
+            </article>
+
+            <article class="package-card reveal" data-package-card="complete">
+              <span class="package-label">5-day workflow</span>
+              <div class="price"><strong>$499</strong><span>complete</span></div>
+              <h3>Complete Workflow</h3>
+              <p>Add branches, routing, failure visibility, CRM updates, and a stronger client handoff.</p>
+              <ul>
+                <li>Two to three branches</li>
+                <li>Routing and failure handling</li>
+                <li>Demo, tests, and maintenance guide</li>
+              </ul>
+              <button class="btn primary" data-pay="complete">Pay with PayPal</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="delivery" id="delivery">
+        <div class="shell">
+          <div class="reveal">
+            <h2 class="section-title">Delivery flow after payment</h2>
+            <p class="section-copy">Clients always know what happens next: intake, diagnostic, implementation, testing, and handoff.</p>
+          </div>
+
+          <div class="delivery-grid">
+            <div class="timeline reveal">
+              <div class="timeline-step"><b>1</b><div><h3>Pay or submit requirements</h3><p>Choose a package or send the workflow details through the intake form.</p></div></div>
+              <div class="timeline-step"><b>2</b><div><h3>Answer diagnostic questions</h3><p>Confirm lead source, manual owner, volume, bottleneck, and destination.</p></div></div>
+              <div class="timeline-step"><b>3</b><div><h3>Receive workflow map</h3><p>Diagnostic clients receive a workflow map, risk notes, and build recommendation within 24 hours.</p></div></div>
+              <div class="timeline-step"><b>4</b><div><h3>Upgrade to implementation</h3><p>The diagnostic credit applies toward Starter or Complete implementation.</p></div></div>
+              <div class="timeline-step"><b>5</b><div><h3>Test, demo, and handoff</h3><p>Every build includes sample tests, a demo walkthrough, and maintenance notes.</p></div></div>
+            </div>
+
+            <div class="status-grid reveal">
+              <article class="status-card">
+                <h3>Diagnostic</h3>
+                <p>Workflow map, risk notes, and build recommendation.</p>
+              </article>
+              <article class="status-card">
+                <h3>Starter</h3>
+                <p>One trigger, one AI step, one destination, and three tests.</p>
+              </article>
+              <article class="status-card">
+                <h3>Complete</h3>
+                <p>Branches, routing, failure handling, demo, and handoff guide.</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -1270,6 +1647,81 @@
         </div>
       </section>
 
+      <section class="contact-section" id="contact">
+        <div class="shell">
+          <div class="reveal">
+            <h2 class="section-title">Online contact and intake</h2>
+            <p class="section-copy">Send the workflow details first, then book a diagnostic when the scheduling link is configured.</p>
+          </div>
+
+          <div class="contact-layout">
+            <aside class="contact-panel reveal">
+              <h3>Fastest path</h3>
+              <p class="section-copy">Start with the $99 diagnostic. It maps the workflow before any implementation is scoped.</p>
+              <div class="form-actions">
+                <button class="btn primary" data-booking>Book diagnostic</button>
+                <button class="btn ghost" data-open-contact>Open contact panel</button>
+              </div>
+              <div class="config-alert" style="margin-top: 20px;">
+                <span aria-hidden="true">i</span>
+                <div>
+                  <strong>Links pending.</strong>
+                  Add PayPal, Formspree, and booking URLs in the `siteConfig` object to activate real submissions and payments.
+                </div>
+              </div>
+            </aside>
+
+            <form class="intake-form reveal" id="intakeForm">
+              <h3>Project intake form</h3>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="field">
+                  <label for="company">Company / business</label>
+                  <input id="company" name="company" autocomplete="organization">
+                </div>
+                <div class="field">
+                  <label for="service">Target service</label>
+                  <select id="service" name="service">
+                    <option>Workflow Diagnostic</option>
+                    <option>Starter Build</option>
+                    <option>Complete Workflow</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="tools">Current tools</label>
+                  <input id="tools" name="tools" placeholder="Gmail, HubSpot, Sheets, Calendly">
+                </div>
+                <div class="field">
+                  <label for="budget">Budget / intent</label>
+                  <select id="budget" name="budget">
+                    <option>$99 diagnostic</option>
+                    <option>$199 starter</option>
+                    <option>$499 complete</option>
+                    <option>Need recommendation</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="message">Workflow need</label>
+                  <textarea id="message" name="message" placeholder="Where do new leads arrive, who handles them now, and where should the final record go?" required></textarea>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn primary" type="submit">Submit intake</button>
+                <button class="btn ghost" type="button" data-booking>Book a time</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
       <section class="partners" id="partners">
         <div class="shell">
           <h2 class="section-title reveal">Integration partners</h2>
@@ -1312,6 +1764,9 @@
           <a href="#home">Home</a>
           <a href="#meta">Platform</a>
           <a href="#products">Solutions</a>
+          <a href="#packages">Pay</a>
+          <a href="#delivery">Delivery</a>
+          <a href="#contact">Contact</a>
           <a href="#news">Insights</a>
         </div>
         <div>
@@ -1330,7 +1785,7 @@
       <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
         <button class="close" id="closeDrawer" aria-label="Close contact panel">x</button>
         <h2 id="drawerTitle">Start a diagnostic</h2>
-        <p class="section-copy">The first step is a workflow diagnostic: one trigger, one AI step, one destination, and a clear build path.</p>
+        <p class="section-copy" id="drawerMessage">The first step is a workflow diagnostic: one trigger, one AI step, one destination, and a clear build path.</p>
         <div class="contact-card">
           <strong>Contact</strong>
           <p><a href="https://github.com/kingsleyTom">github.com/kingsleyTom</a></p>
@@ -1339,10 +1794,27 @@
           <strong>Default package</strong>
           <p>$99 diagnostic credited toward implementation.</p>
         </div>
+        <div class="contact-card" style="margin-top: 14px;">
+          <strong>Setup status</strong>
+          <p id="drawerSetupStatus">Payment, form, and booking links are pending configuration.</p>
+        </div>
       </div>
     </div>
 
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
     <script>
+      const siteConfig = {
+        paypalLinks: {
+          diagnostic: "",
+          starter: "",
+          complete: ""
+        },
+        formspreeEndpoint: "",
+        bookingUrl: "",
+        contactFallbackUrl: "https://github.com/kingsleyTom"
+      };
+
       const heroSlides = [
         {
           kicker: "Featured",
@@ -1391,7 +1863,59 @@
       const navLinks = [...document.querySelectorAll(".nav-link")];
       const sections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
       const drawer = document.getElementById("contactDrawer");
+      const drawerTitle = document.getElementById("drawerTitle");
+      const drawerMessage = document.getElementById("drawerMessage");
+      const drawerSetupStatus = document.getElementById("drawerSetupStatus");
       const nav = document.getElementById("navLinks");
+      const toast = document.getElementById("toast");
+      const form = document.getElementById("intakeForm");
+
+      function hasValue(value) {
+        return typeof value === "string" && value.trim().length > 0;
+      }
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add("show");
+        window.clearTimeout(showToast.timer);
+        showToast.timer = window.setTimeout(() => {
+          toast.classList.remove("show");
+        }, 4200);
+      }
+
+      function openDrawer(title = "Start a diagnostic", message = "The first step is a workflow diagnostic: one trigger, one AI step, one destination, and a clear build path.") {
+        drawerTitle.textContent = title;
+        drawerMessage.textContent = message;
+        drawerSetupStatus.textContent = getSetupStatus();
+        drawer.classList.add("open");
+        drawer.setAttribute("aria-hidden", "false");
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove("open");
+        drawer.setAttribute("aria-hidden", "true");
+      }
+
+      function getSetupStatus() {
+        const missing = [];
+        if (!hasValue(siteConfig.paypalLinks.diagnostic) || !hasValue(siteConfig.paypalLinks.starter) || !hasValue(siteConfig.paypalLinks.complete)) {
+          missing.push("PayPal links");
+        }
+        if (!hasValue(siteConfig.formspreeEndpoint)) {
+          missing.push("Formspree endpoint");
+        }
+        if (!hasValue(siteConfig.bookingUrl)) {
+          missing.push("booking URL");
+        }
+        return missing.length ? `${missing.join(", ")} pending configuration.` : "All commerce, form, and booking links are configured.";
+      }
+
+      function updateConfigurationNotice() {
+        const alert = document.getElementById("configAlert");
+        if (alert) {
+          alert.hidden = getSetupStatus() === "All commerce, form, and booking links are configured.";
+        }
+      }
 
       document.getElementById("mobileToggle").addEventListener("click", () => {
         nav.classList.toggle("open");
@@ -1399,20 +1923,78 @@
 
       document.querySelectorAll("[data-open-contact]").forEach((button) => {
         button.addEventListener("click", () => {
-          drawer.classList.add("open");
-          drawer.setAttribute("aria-hidden", "false");
+          openDrawer();
         });
       });
 
       document.getElementById("closeDrawer").addEventListener("click", () => {
-        drawer.classList.remove("open");
-        drawer.setAttribute("aria-hidden", "true");
+        closeDrawer();
       });
 
       drawer.addEventListener("click", (event) => {
         if (event.target === drawer) {
-          drawer.classList.remove("open");
-          drawer.setAttribute("aria-hidden", "true");
+          closeDrawer();
+        }
+      });
+
+      document.querySelectorAll("[data-pay]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const packageName = button.dataset.pay;
+          const link = siteConfig.paypalLinks[packageName];
+          if (hasValue(link)) {
+            window.location.href = link;
+            return;
+          }
+          openDrawer(
+            "Payment link pending configuration",
+            `The ${packageName} PayPal link is not configured yet. Add the real PayPal URL in siteConfig.paypalLinks.${packageName}, then this button will redirect clients to payment.`
+          );
+          showToast("Payment link pending configuration.");
+        });
+      });
+
+      document.querySelectorAll("[data-booking]").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (hasValue(siteConfig.bookingUrl)) {
+            window.location.href = siteConfig.bookingUrl;
+            return;
+          }
+          openDrawer(
+            "Booking link pending configuration",
+            "The booking link is not configured yet. Use the intake form or GitHub contact fallback for now, then add your Calendly/TidyCal URL to siteConfig.bookingUrl."
+          );
+          showToast("Booking link pending configuration.");
+        });
+      });
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!hasValue(siteConfig.formspreeEndpoint)) {
+          openDrawer(
+            "Contact form pending configuration",
+            "The intake form is ready, but the Formspree endpoint is not configured yet. Add it to siteConfig.formspreeEndpoint to send submissions by email."
+          );
+          showToast("Formspree endpoint pending configuration. Your form input was kept on the page.");
+          return;
+        }
+
+        const formData = new FormData(form);
+        try {
+          const response = await fetch(siteConfig.formspreeEndpoint, {
+            method: "POST",
+            body: formData,
+            headers: { Accept: "application/json" }
+          });
+          if (!response.ok) {
+            throw new Error("Form submission failed");
+          }
+          form.reset();
+          showToast("Thanks. Your intake was submitted.");
+        } catch (error) {
+          showToast("Submission failed. Please use the fallback contact link.");
+          window.setTimeout(() => {
+            window.location.href = siteConfig.contactFallbackUrl;
+          }, 1200);
         }
       });
 
@@ -1505,6 +2087,7 @@
       }, { rootMargin: "-42% 0px -50% 0px" });
 
       sections.forEach((section) => navObserver.observe(section));
+      updateConfigurationNotice();
     </script>
   </body>
 </html>
