@@ -18,6 +18,7 @@ This checks:
 - PayPal buttons exist for all three packages.
 - Intake form exists.
 - Delivery and contact sections exist.
+- FAQ and privacy note exist.
 - JavaScript syntax is valid.
 
 ## Configuration Checks
@@ -51,6 +52,7 @@ Desktop:
 - PayPal buttons open pending-configuration messaging when links are blank.
 - Contact form preserves input and shows setup guidance when Formspree is blank.
 - Contact drawer opens and closes.
+- FAQ questions expand and collapse.
 - Partner carousel moves.
 
 Mobile:

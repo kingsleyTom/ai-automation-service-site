@@ -978,6 +978,89 @@
         transform: translate(-50%, 0);
       }
 
+      .faq {
+        padding: 88px 0;
+        background:
+          radial-gradient(circle at 82% 10%, rgba(82, 228, 255, 0.14), transparent 22%),
+          linear-gradient(180deg, #f6faff 0%, #ffffff 100%);
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.72fr) minmax(360px, 1fr);
+        gap: 44px;
+        align-items: start;
+        margin-top: 34px;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .faq-item {
+        border: 1px solid rgba(47, 107, 255, 0.14);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 18px 44px rgba(35, 91, 221, 0.08);
+        overflow: hidden;
+      }
+
+      .faq-question {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        border: 0;
+        padding: 18px 20px;
+        color: var(--ink);
+        background: transparent;
+        text-align: left;
+        font-weight: 800;
+      }
+
+      .faq-question span {
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        color: var(--blue);
+        background: rgba(47, 107, 255, 0.08);
+      }
+
+      .faq-answer {
+        display: none;
+        padding: 0 20px 20px;
+        color: var(--muted);
+        line-height: 1.62;
+      }
+
+      .faq-item.open .faq-answer {
+        display: block;
+      }
+
+      .trust-card {
+        border: 1px solid rgba(47, 107, 255, 0.14);
+        border-radius: 8px;
+        padding: 24px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(240, 247, 255, 0.88));
+        box-shadow: 0 22px 54px rgba(35, 91, 221, 0.1);
+      }
+
+      .trust-card h3 {
+        margin-top: 0;
+      }
+
+      .trust-card ul {
+        margin-bottom: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
       .news {
         padding: 88px 0 76px;
         background: #fff;
@@ -1305,7 +1388,8 @@
         .package-grid,
         .delivery-grid,
         .status-grid,
-        .contact-layout {
+        .contact-layout,
+        .faq-grid {
           grid-template-columns: 1fr;
         }
 
@@ -1393,6 +1477,7 @@
           <a class="nav-link" href="#packages">Pay</a>
           <a class="nav-link" href="#delivery">Delivery</a>
           <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="#faq">FAQ</a>
           <a class="nav-link" href="#news">Insights</a>
           <a class="nav-link" href="#partners">Partners</a>
         </nav>
@@ -1713,11 +1798,52 @@
                   <textarea id="message" name="message" placeholder="Where do new leads arrive, who handles them now, and where should the final record go?" required></textarea>
                 </div>
               </div>
+              <p class="section-copy" style="font-size: 13px; margin-top: 14px;">Privacy note: this static site does not store form entries. When Formspree is configured, submissions are sent to the configured inbox; do not include passwords, API keys, or sensitive client data in this form.</p>
               <div class="form-actions">
                 <button class="btn primary" type="submit">Submit intake</button>
                 <button class="btn ghost" type="button" data-booking>Book a time</button>
               </div>
             </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="faq">
+        <div class="shell">
+          <div class="reveal">
+            <h2 class="section-title">Common questions before starting</h2>
+            <p class="section-copy">The first build is intentionally narrow: enough to prove value, easy to review, and safe to maintain.</p>
+          </div>
+
+          <div class="faq-grid">
+            <aside class="trust-card reveal">
+              <h3>Safety defaults</h3>
+              <ul>
+                <li>AI creates drafts or summaries first.</li>
+                <li>Customer-facing messages stay human-reviewed.</li>
+                <li>No passwords are needed for the diagnostic.</li>
+                <li>Each implementation is tested with sample records.</li>
+              </ul>
+            </aside>
+
+            <div class="faq-list reveal">
+              <article class="faq-item open">
+                <button class="faq-question" type="button">What happens after I pay for a diagnostic?<span>+</span></button>
+                <div class="faq-answer">You answer five workflow questions. Within 24 hours, you receive a workflow map, risk notes, and a build recommendation. If you choose implementation, the diagnostic fee is credited toward the build.</div>
+              </article>
+              <article class="faq-item">
+                <button class="faq-question" type="button">Can AI send replies automatically?<span>+</span></button>
+                <div class="faq-answer">The default is safer: AI drafts replies for human review. Fully automated customer-facing messages should only be considered after the workflow proves reliable and the message type is low risk.</div>
+              </article>
+              <article class="faq-item">
+                <button class="faq-question" type="button">What tools can be connected?<span>+</span></button>
+                <div class="faq-answer">Common first builds use Gmail, Google Sheets, Calendly, HubSpot, Airtable, Slack, Zapier, Make, or n8n. The diagnostic confirms the simplest stack before implementation starts.</div>
+              </article>
+              <article class="faq-item">
+                <button class="faq-question" type="button">What is included in the Starter Build?<span>+</span></button>
+                <div class="faq-answer">One trigger, one AI classification or draft step, one destination, three test records, and a one-page handoff guide.</div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -1767,6 +1893,7 @@
           <a href="#packages">Pay</a>
           <a href="#delivery">Delivery</a>
           <a href="#contact">Contact</a>
+          <a href="#faq">FAQ</a>
           <a href="#news">Insights</a>
         </div>
         <div>
@@ -2029,6 +2156,17 @@
           document.querySelectorAll(".news-item").forEach((item) => {
             item.hidden = value !== "all" && item.dataset.category !== value;
           });
+        });
+      });
+
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const item = question.closest(".faq-item");
+          const wasOpen = item.classList.contains("open");
+          document.querySelectorAll(".faq-item").forEach((entry) => entry.classList.remove("open"));
+          if (!wasOpen) {
+            item.classList.add("open");
+          }
         });
       });
 

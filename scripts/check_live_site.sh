@@ -10,6 +10,8 @@ required_patterns=(
   "Choose a paid workflow path"
   "Delivery flow after payment"
   "Online contact and intake"
+  "Common questions before starting"
+  "Privacy note:"
   "const siteConfig ="
   "paypalLinks:"
   "formspreeEndpoint"
