@@ -9,6 +9,8 @@ required_patterns=(
   "LeadFlow Cyber"
   "Choose a paid workflow path"
   "Delivery flow after payment"
+  "Sample diagnostic output"
+  "Example: new lead to review-ready follow-up"
   "Online contact and intake"
   "Common questions before starting"
   "Privacy note:"

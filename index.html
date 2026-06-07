@@ -876,6 +876,94 @@
         margin: 0 0 10px;
       }
 
+      .sample-map {
+        padding: 88px 0;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(67, 199, 255, 0.16), transparent 24%),
+          linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+      }
+
+      .map-layout {
+        display: grid;
+        grid-template-columns: minmax(300px, 1fr) minmax(320px, 0.9fr);
+        gap: 28px;
+        align-items: stretch;
+        margin-top: 34px;
+      }
+
+      .map-card,
+      .deliverable-card {
+        border: 1px solid rgba(47, 107, 255, 0.14);
+        border-radius: 8px;
+        padding: 26px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 22px 54px rgba(35, 91, 221, 0.1);
+      }
+
+      .map-flow {
+        display: grid;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .map-node {
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 14px;
+        align-items: center;
+        border: 1px solid rgba(47, 107, 255, 0.12);
+        border-radius: 8px;
+        padding: 14px;
+        background: #f8fbff;
+      }
+
+      .map-node b {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: #fff;
+        background: linear-gradient(135deg, #67dfff, #2f6bff);
+        box-shadow: 0 10px 24px rgba(47, 107, 255, 0.24);
+      }
+
+      .map-node h3 {
+        margin: 0 0 4px;
+        font-size: 16px;
+      }
+
+      .map-node p,
+      .deliverable-card p,
+      .deliverable-card li {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .deliverable-card ul {
+        display: grid;
+        gap: 12px;
+        margin: 20px 0 0;
+        padding-left: 18px;
+      }
+
+      .risk-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .risk-pill {
+        border-radius: 8px;
+        padding: 12px;
+        color: #244067;
+        background: rgba(47, 107, 255, 0.08);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
       .contact-section {
         padding: 88px 0;
         background: #fff;
@@ -1388,6 +1476,8 @@
         .package-grid,
         .delivery-grid,
         .status-grid,
+        .map-layout,
+        .risk-strip,
         .contact-layout,
         .faq-grid {
           grid-template-columns: 1fr;
@@ -1476,6 +1566,7 @@
           <a class="nav-link" href="#products">Solutions</a>
           <a class="nav-link" href="#packages">Pay</a>
           <a class="nav-link" href="#delivery">Delivery</a>
+          <a class="nav-link" href="#sample">Sample</a>
           <a class="nav-link" href="#contact">Contact</a>
           <a class="nav-link" href="#faq">FAQ</a>
           <a class="nav-link" href="#news">Insights</a>
@@ -1732,6 +1823,59 @@
         </div>
       </section>
 
+      <section class="sample-map" id="sample">
+        <div class="shell">
+          <div class="reveal">
+            <h2 class="section-title">Sample diagnostic output</h2>
+            <p class="section-copy">This is the kind of workflow map a client receives from the $99 diagnostic. It is anonymized and simplified for public viewing.</p>
+          </div>
+
+          <div class="map-layout">
+            <article class="map-card reveal">
+              <h3>Example: new lead to review-ready follow-up</h3>
+              <div class="map-flow">
+                <div class="map-node">
+                  <b>1</b>
+                  <div><h3>Lead captured</h3><p>Website form, Gmail label, or Calendly note enters the automation.</p></div>
+                </div>
+                <div class="map-node">
+                  <b>2</b>
+                  <div><h3>Fields normalized</h3><p>Name, source, inquiry text, urgency, missing details, and owner are prepared for routing.</p></div>
+                </div>
+                <div class="map-node">
+                  <b>3</b>
+                  <div><h3>AI triage draft</h3><p>AI classifies intent and creates an internal summary or reply draft for human review.</p></div>
+                </div>
+                <div class="map-node">
+                  <b>4</b>
+                  <div><h3>Record synced</h3><p>The lead is written to Google Sheets, HubSpot, Airtable, or the agreed destination.</p></div>
+                </div>
+                <div class="map-node">
+                  <b>5</b>
+                  <div><h3>Owner notified</h3><p>The owner receives a review prompt with suggested next action and missing details.</p></div>
+                </div>
+              </div>
+            </article>
+
+            <aside class="deliverable-card reveal">
+              <h3>What the diagnostic includes</h3>
+              <p>A decision-ready summary that shows what to automate first, what to avoid, and what package fits the scope.</p>
+              <ul>
+                <li>Workflow map with trigger, AI step, destination, and review point.</li>
+                <li>Risk notes for missing fields, AI draft quality, and failure visibility.</li>
+                <li>Recommended package: Diagnostic, Starter, or Complete.</li>
+                <li>Access and sample data checklist for implementation.</li>
+              </ul>
+              <div class="risk-strip">
+                <div class="risk-pill">Human review first</div>
+                <div class="risk-pill">No password for diagnostic</div>
+                <div class="risk-pill">3 test records before handoff</div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
       <section class="contact-section" id="contact">
         <div class="shell">
           <div class="reveal">
@@ -1892,6 +2036,7 @@
           <a href="#products">Solutions</a>
           <a href="#packages">Pay</a>
           <a href="#delivery">Delivery</a>
+          <a href="#sample">Sample</a>
           <a href="#contact">Contact</a>
           <a href="#faq">FAQ</a>
           <a href="#news">Insights</a>
