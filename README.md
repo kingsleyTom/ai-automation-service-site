@@ -46,6 +46,21 @@ For the full setup checklist, see:
 
 - `CONFIGURATION.md`
 - `OPERATIONS.md`
+- `QA.md`
+
+## Validate Locally
+
+Before pushing site changes:
+
+```bash
+scripts/validate_site.sh
+```
+
+After GitHub Pages rebuilds:
+
+```bash
+scripts/check_live_site.sh
+```
 
 ## Update Contact Link
 
@@ -63,7 +78,7 @@ After editing:
 
 ```bash
 git status --short
-git add index.html README.md CONFIGURATION.md OPERATIONS.md .github/ISSUE_TEMPLATE/configuration_task.md
+git add index.html README.md CONFIGURATION.md OPERATIONS.md QA.md scripts/ .github/ISSUE_TEMPLATE/configuration_task.md
 git commit -m "Update commerce and contact configuration"
 git push
 ```
