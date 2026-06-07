@@ -49,6 +49,36 @@ Acceptance check:
 - It should redirect to the correct PayPal checkout page.
 - No payment button should open the "Payment link pending configuration" drawer after configuration.
 
+## Helper Script
+
+You can update the configuration with environment variables instead of editing JavaScript by hand.
+
+Dry run:
+
+```bash
+PAYPAL_DIAGNOSTIC_URL="https://www.paypal.com/..." \
+PAYPAL_STARTER_URL="https://www.paypal.com/..." \
+PAYPAL_COMPLETE_URL="https://www.paypal.com/..." \
+FORMSPREE_ENDPOINT_URL="https://formspree.io/f/xxxxxxx" \
+BOOKING_URL="https://calendly.com/..." \
+CONTACT_FALLBACK_URL="https://github.com/kingsleyTom" \
+node scripts/configure_site.mjs
+```
+
+Write changes:
+
+```bash
+PAYPAL_DIAGNOSTIC_URL="https://www.paypal.com/..." \
+PAYPAL_STARTER_URL="https://www.paypal.com/..." \
+PAYPAL_COMPLETE_URL="https://www.paypal.com/..." \
+FORMSPREE_ENDPOINT_URL="https://formspree.io/f/xxxxxxx" \
+BOOKING_URL="https://calendly.com/..." \
+CONTACT_FALLBACK_URL="https://github.com/kingsleyTom" \
+node scripts/configure_site.mjs --write
+```
+
+The script only accepts `http://` or `https://` values.
+
 ## Formspree Intake Form
 
 Create a Formspree form and copy the endpoint, usually shaped like:

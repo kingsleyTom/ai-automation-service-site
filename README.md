@@ -46,6 +46,20 @@ Fill these values when ready:
 
 Until these links are configured, the live page shows safe "configuration needed" messaging instead of sending clients to broken payment or form URLs.
 
+You can also configure the values with the helper script:
+
+```bash
+PAYPAL_DIAGNOSTIC_URL="https://www.paypal.com/..." \
+PAYPAL_STARTER_URL="https://www.paypal.com/..." \
+PAYPAL_COMPLETE_URL="https://www.paypal.com/..." \
+FORMSPREE_ENDPOINT_URL="https://formspree.io/f/xxxxxxx" \
+BOOKING_URL="https://calendly.com/..." \
+CONTACT_FALLBACK_URL="https://github.com/kingsleyTom" \
+node scripts/configure_site.mjs --write
+```
+
+Run it without `--write` first to preview the change.
+
 For the full setup checklist, see:
 
 - `CONFIGURATION.md`
