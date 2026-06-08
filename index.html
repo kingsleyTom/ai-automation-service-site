@@ -1736,8 +1736,8 @@
             <div class="config-alert" id="configAlert" hidden>
               <span aria-hidden="true">!</span>
               <div>
-                <strong>Configuration needed.</strong>
-                Some checkout, form, or booking links still need setup. The UI is live, and any missing action will show setup guidance until its link is added.
+                <strong id="configAlertTitle">Configuration needed.</strong>
+                <span id="configAlertMessage">Some checkout, form, or booking links still need setup. The UI is live, and any missing action will show setup guidance until its link is added.</span>
               </div>
             </div>
           </div>
@@ -2198,6 +2198,14 @@
         return typeof value === "string" && value.trim().length > 0;
       }
 
+      function paymentLinkValues() {
+        return Object.values(siteConfig.paymentLinks);
+      }
+
+      function hasTestPaymentLinks() {
+        return paymentLinkValues().some((link) => hasValue(link) && link.includes("buy.stripe.com/test_"));
+      }
+
       function showToast(message) {
         toast.textContent = message;
         toast.classList.add("show");
@@ -2231,13 +2239,23 @@
         if (!hasValue(siteConfig.bookingUrl)) {
           missing.push("booking URL");
         }
-        return missing.length ? `${missing.join(", ")} pending configuration.` : "All commerce, form, and booking links are configured.";
+        const status = missing.length ? `${missing.join(", ")} pending configuration.` : "All commerce, form, and booking links are configured.";
+        return hasTestPaymentLinks() ? `Test payment mode active. ${status}` : status;
       }
 
       function updateConfigurationNotice() {
         const alert = document.getElementById("configAlert");
+        const title = document.getElementById("configAlertTitle");
+        const message = document.getElementById("configAlertMessage");
         if (alert) {
-          alert.hidden = getSetupStatus() === "All commerce, form, and booking links are configured.";
+          const status = getSetupStatus();
+          alert.hidden = status === "All commerce, form, and booking links are configured.";
+          if (title && message) {
+            title.textContent = hasTestPaymentLinks() ? "Test payment mode." : "Configuration needed.";
+            message.textContent = hasTestPaymentLinks()
+              ? "Stripe test checkout links are connected for QA. Replace them with live checkout links before accepting real customers."
+              : "Some checkout, form, or booking links still need setup. The UI is live, and any missing action will show setup guidance until its link is added.";
+          }
         }
       }
 
@@ -2266,6 +2284,9 @@
           const packageName = button.dataset.pay;
           const link = siteConfig.paymentLinks[packageName];
           if (hasValue(link)) {
+            if (link.includes("buy.stripe.com/test_")) {
+              showToast("Opening Stripe test checkout. Replace with live links before real sales.");
+            }
             window.location.href = link;
             return;
           }

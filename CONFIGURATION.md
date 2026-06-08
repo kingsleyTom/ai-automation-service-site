@@ -80,6 +80,8 @@ node scripts/configure_site.mjs --write
 The script only accepts `http://` or `https://` values.
 Legacy `PAYPAL_DIAGNOSTIC_URL`, `PAYPAL_STARTER_URL`, and `PAYPAL_COMPLETE_URL` are still accepted.
 
+Stripe test links are accepted for QA, but they are not live payment links. The page displays a test payment mode notice when any checkout URL contains `buy.stripe.com/test_`.
+
 ## Formspree Intake Form
 
 Create a Formspree form and copy the endpoint, usually shaped like:

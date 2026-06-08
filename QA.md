@@ -33,6 +33,7 @@ After adding real links:
 - Diagnostic payment button redirects to the $99 checkout.
 - Starter payment button redirects to the $199 checkout.
 - Complete payment button redirects to the $499 checkout.
+- Stripe test checkout links show a test payment mode notice.
 - Intake form sends a test message to Formspree.
 - Booking buttons redirect to the scheduler.
 - Fallback contact link works.

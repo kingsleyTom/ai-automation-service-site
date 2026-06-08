@@ -74,6 +74,8 @@ Stripe, PayPal, Square, Lemon Squeezy, Gumroad, or any provider that gives a dir
 
 Run it without `--write` first to preview the change.
 
+If Stripe test links are configured, the public page shows a test payment mode notice. Replace all `https://buy.stripe.com/test_...` URLs with live checkout URLs before accepting real customers.
+
 For the full setup checklist, see:
 
 - `CONFIGURATION.md`

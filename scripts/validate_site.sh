@@ -38,6 +38,8 @@ required_patterns=(
   "Common questions before starting"
   "Privacy note:"
   "Payment link pending configuration"
+  "Test payment mode"
+  "buy.stripe.com/test_"
   "id=\"intakeForm\""
   "class=\"faq-question\""
   "id=\"sample\""
