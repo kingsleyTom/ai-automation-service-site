@@ -17,7 +17,7 @@ This checks:
 - Stale placeholder contact text is absent.
 - Canonical, Open Graph, Twitter Card, and structured data tags exist.
 - Commerce and contact configuration object exists.
-- PayPal buttons exist for all three packages.
+- Payment buttons exist for all three packages.
 - Intake form exists.
 - Delivery and contact sections exist.
 - Sample diagnostic workflow map exists.
@@ -30,9 +30,9 @@ This checks:
 
 After adding real links:
 
-- Diagnostic PayPal button redirects to the $99 checkout.
-- Starter PayPal button redirects to the $199 checkout.
-- Complete PayPal button redirects to the $499 checkout.
+- Diagnostic payment button redirects to the $99 checkout.
+- Starter payment button redirects to the $199 checkout.
+- Complete payment button redirects to the $499 checkout.
 - Intake form sends a test message to Formspree.
 - Booking buttons redirect to the scheduler.
 - Fallback contact link works.
@@ -68,7 +68,7 @@ Desktop:
 - Navigation links scroll to the correct sections.
 - Hero slide dots change the headline.
 - Product tabs update the feature panel.
-- PayPal buttons open pending-configuration messaging when links are blank.
+- Payment buttons open pending-configuration messaging when links are blank.
 - Contact form preserves input and shows setup guidance when Formspree is blank.
 - Contact drawer opens and closes.
 - Sample workflow map is readable and does not expose private client details.
@@ -88,5 +88,5 @@ Mobile:
 When a release changes commerce or contact behavior, add a short commit message that names the changed integration, for example:
 
 ```text
-Configure PayPal diagnostic link
+Configure diagnostic payment link
 ```

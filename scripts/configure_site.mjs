@@ -11,32 +11,32 @@ const indexPath = path.join(repoRoot, "index.html");
 
 const fields = [
   {
-    env: "PAYPAL_DIAGNOSTIC_URL",
-    label: "paypalLinks.diagnostic",
+    envs: ["DIAGNOSTIC_PAYMENT_URL", "PAYPAL_DIAGNOSTIC_URL"],
+    label: "paymentLinks.diagnostic",
     pattern: /(diagnostic:\s*)"[^"]*"/,
   },
   {
-    env: "PAYPAL_STARTER_URL",
-    label: "paypalLinks.starter",
+    envs: ["STARTER_PAYMENT_URL", "PAYPAL_STARTER_URL"],
+    label: "paymentLinks.starter",
     pattern: /(starter:\s*)"[^"]*"/,
   },
   {
-    env: "PAYPAL_COMPLETE_URL",
-    label: "paypalLinks.complete",
+    envs: ["COMPLETE_PAYMENT_URL", "PAYPAL_COMPLETE_URL"],
+    label: "paymentLinks.complete",
     pattern: /(complete:\s*)"[^"]*"/,
   },
   {
-    env: "FORMSPREE_ENDPOINT_URL",
+    envs: ["FORMSPREE_ENDPOINT_URL"],
     label: "formspreeEndpoint",
     pattern: /(formspreeEndpoint:\s*)"[^"]*"/,
   },
   {
-    env: "BOOKING_URL",
+    envs: ["BOOKING_URL"],
     label: "bookingUrl",
     pattern: /(bookingUrl:\s*)"[^"]*"/,
   },
   {
-    env: "CONTACT_FALLBACK_URL",
+    envs: ["CONTACT_FALLBACK_URL"],
     label: "contactFallbackUrl",
     pattern: /(contactFallbackUrl:\s*)"[^"]*"/,
   },
@@ -48,13 +48,15 @@ function usage() {
 Default mode is a dry run. Add --write to update index.html.
 
 Example:
-  PAYPAL_DIAGNOSTIC_URL="https://www.paypal.com/..." \\
+  DIAGNOSTIC_PAYMENT_URL="https://buy.stripe.com/..." \\
   FORMSPREE_ENDPOINT_URL="https://formspree.io/f/xxxxxxx" \\
   BOOKING_URL="https://calendly.com/..." \\
   node scripts/configure_site.mjs --write
 
 Supported environment variables:
-${fields.map((field) => `  ${field.env}`).join("\n")}
+${fields.map((field) => `  ${field.envs.join(" or ")}`).join("\n")}
+
+Legacy PAYPAL_* variables are still accepted for payment links.
 `);
 }
 
@@ -75,7 +77,18 @@ function validateUrl(env, value) {
   }
 }
 
-const provided = fields.filter((field) => Object.prototype.hasOwnProperty.call(process.env, field.env));
+function getProvidedValue(field) {
+  for (const env of field.envs) {
+    if (Object.prototype.hasOwnProperty.call(process.env, env)) {
+      return { env, value: process.env[env] ?? "" };
+    }
+  }
+  return null;
+}
+
+const provided = fields
+  .map((field) => ({ field, providedValue: getProvidedValue(field) }))
+  .filter((entry) => entry.providedValue);
 
 if (args.has("--help") || provided.length === 0) {
   usage();
@@ -85,16 +98,16 @@ if (args.has("--help") || provided.length === 0) {
 let html = fs.readFileSync(indexPath, "utf8");
 const changed = [];
 
-for (const field of provided) {
-  const value = process.env[field.env] ?? "";
-  validateUrl(field.env, value);
+for (const { field, providedValue } of provided) {
+  const { env, value } = providedValue;
+  validateUrl(env, value);
 
   if (!field.pattern.test(html)) {
     throw new Error(`Could not find ${field.label} in index.html.`);
   }
 
   html = html.replace(field.pattern, `$1${JSON.stringify(value)}`);
-  changed.push(field.label);
+  changed.push(`${field.label} from ${env}`);
 }
 
 if (writeChanges) {

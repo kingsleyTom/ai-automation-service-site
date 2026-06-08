@@ -6,7 +6,7 @@ This roadmap keeps the project moving toward live revenue operation without wait
 
 - Public GitHub Pages site is live.
 - Payment, contact, and delivery UI exists.
-- PayPal, Formspree, and booking links are pending external setup.
+- Payment, Formspree, and booking links are pending external setup.
 - Public site has local and live QA scripts.
 - Private kit stores operating templates, outreach materials, and delivery assets.
 
@@ -14,9 +14,9 @@ This roadmap keeps the project moving toward live revenue operation without wait
 
 Blocked by external setup:
 
-- PayPal diagnostic link
-- PayPal starter link
-- PayPal complete link
+- Diagnostic payment link
+- Starter payment link
+- Complete payment link
 - Formspree endpoint
 - Booking URL
 

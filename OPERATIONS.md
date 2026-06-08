@@ -24,7 +24,7 @@ The public site should contain only:
 - Public service description
 - Package cards
 - Contact/intake form UI
-- PayPal links
+- Payment links
 - Booking link
 - Public image assets
 
@@ -52,7 +52,7 @@ The private kit stores:
 ## Daily Operating Flow
 
 1. Check new Formspree submissions.
-2. Check PayPal payments.
+2. Check payment provider activity.
 3. Check booking calendar.
 4. Create a delivery task in the private kit or GitHub issue.
 5. Send the diagnostic intake questions.
@@ -69,23 +69,23 @@ The private kit stores:
 
 ## Configuration Checklist
 
-- [ ] PayPal diagnostic link configured.
-- [ ] PayPal starter link configured.
-- [ ] PayPal complete link configured.
+- [ ] Diagnostic payment link configured.
+- [ ] Starter payment link configured.
+- [ ] Complete payment link configured.
 - [ ] Formspree endpoint configured.
 - [ ] Booking URL configured.
 - [ ] Fallback contact URL updated.
 - [ ] Test form submission received.
 - [ ] Test booking redirect works.
-- [ ] Test each PayPal redirect works.
+- [ ] Test each payment redirect works.
 
 ## Incident Notes
 
 If payments fail:
 
-- Remove or blank the affected PayPal URL.
+- Remove or blank the affected payment URL.
 - The site will fall back to the pending configuration drawer.
-- Update the link only after PayPal is fixed.
+- Update the link only after the payment provider is fixed.
 
 If Formspree fails:
 

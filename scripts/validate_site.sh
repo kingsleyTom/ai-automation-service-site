@@ -24,7 +24,7 @@ required_patterns=(
   "property=\"og:title\""
   "name=\"twitter:card\""
   "application/ld+json"
-  "paypalLinks:"
+  "paymentLinks:"
   "diagnostic: \"\""
   "starter: \"\""
   "complete: \"\""
@@ -52,6 +52,11 @@ for pattern in "${required_patterns[@]}"; do
     exit 1
   fi
 done
+
+if grep -F "Pay with PayPal" index.html >/dev/null; then
+  echo "Payment buttons should use provider-neutral copy."
+  exit 1
+fi
 
 grep -F "Sitemap: https://kingsleytom.github.io/ai-automation-service-site/sitemap.xml" robots.txt >/dev/null
 grep -F "<loc>https://kingsleytom.github.io/ai-automation-service-site/</loc>" sitemap.xml >/dev/null

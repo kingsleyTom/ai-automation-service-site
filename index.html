@@ -1732,12 +1732,12 @@
         <div class="shell">
           <div class="reveal">
             <h2 class="section-title">Choose a paid workflow path</h2>
-            <p class="section-copy">Each package has a clear delivery promise. Payment buttons connect to PayPal once links are configured.</p>
+            <p class="section-copy">Each package has a clear delivery promise. Payment buttons connect to your checkout provider once links are configured.</p>
             <div class="config-alert" id="configAlert" hidden>
               <span aria-hidden="true">!</span>
               <div>
                 <strong>Configuration needed.</strong>
-                PayPal, Formspree, and booking links are not configured yet. The UI is live, but client actions will show setup guidance until links are added.
+                Payment, Formspree, and booking links are not configured yet. The UI is live, but client actions will show setup guidance until links are added.
               </div>
             </div>
           </div>
@@ -1753,7 +1753,7 @@
                 <li>Risk notes</li>
                 <li>Build recommendation</li>
               </ul>
-              <button class="btn primary" data-pay="diagnostic">Pay with PayPal</button>
+              <button class="btn primary" data-pay="diagnostic">Pay now</button>
             </article>
 
             <article class="package-card reveal" data-package-card="starter">
@@ -1766,7 +1766,7 @@
                 <li>One AI classification or draft step</li>
                 <li>One destination and handoff guide</li>
               </ul>
-              <button class="btn primary" data-pay="starter">Pay with PayPal</button>
+              <button class="btn primary" data-pay="starter">Pay now</button>
             </article>
 
             <article class="package-card reveal" data-package-card="complete">
@@ -1779,7 +1779,7 @@
                 <li>Routing and failure handling</li>
                 <li>Demo, tests, and maintenance guide</li>
               </ul>
-              <button class="btn primary" data-pay="complete">Pay with PayPal</button>
+              <button class="btn primary" data-pay="complete">Pay now</button>
             </article>
           </div>
         </div>
@@ -1947,7 +1947,7 @@
                 <span aria-hidden="true">i</span>
                 <div>
                   <strong>Links pending.</strong>
-                  Add PayPal, Formspree, and booking URLs in the `siteConfig` object to activate real submissions and payments.
+                  Add payment, Formspree, and booking URLs in the `siteConfig` object to activate real submissions and payments.
                 </div>
               </div>
             </aside>
@@ -2129,7 +2129,7 @@
 
     <script>
       const siteConfig = {
-        paypalLinks: {
+        paymentLinks: {
           diagnostic: "",
           starter: "",
           complete: ""
@@ -2222,8 +2222,8 @@
 
       function getSetupStatus() {
         const missing = [];
-        if (!hasValue(siteConfig.paypalLinks.diagnostic) || !hasValue(siteConfig.paypalLinks.starter) || !hasValue(siteConfig.paypalLinks.complete)) {
-          missing.push("PayPal links");
+        if (!hasValue(siteConfig.paymentLinks.diagnostic) || !hasValue(siteConfig.paymentLinks.starter) || !hasValue(siteConfig.paymentLinks.complete)) {
+          missing.push("payment links");
         }
         if (!hasValue(siteConfig.formspreeEndpoint)) {
           missing.push("Formspree endpoint");
@@ -2264,14 +2264,14 @@
       document.querySelectorAll("[data-pay]").forEach((button) => {
         button.addEventListener("click", () => {
           const packageName = button.dataset.pay;
-          const link = siteConfig.paypalLinks[packageName];
+          const link = siteConfig.paymentLinks[packageName];
           if (hasValue(link)) {
             window.location.href = link;
             return;
           }
           openDrawer(
             "Payment link pending configuration",
-            `The ${packageName} PayPal link is not configured yet. Add the real PayPal URL in siteConfig.paypalLinks.${packageName}, then this button will redirect clients to payment.`
+            `The ${packageName} payment link is not configured yet. Add the real checkout URL in siteConfig.paymentLinks.${packageName}, then this button will redirect clients to payment.`
           );
           showToast("Payment link pending configuration.");
         });

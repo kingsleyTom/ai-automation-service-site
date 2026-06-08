@@ -8,7 +8,7 @@ All live integrations are controlled by the `siteConfig` object inside `index.ht
 
 ```js
 const siteConfig = {
-  paypalLinks: {
+  paymentLinks: {
     diagnostic: "",
     starter: "",
     complete: ""
@@ -21,13 +21,13 @@ const siteConfig = {
 
 Until values are filled:
 
-- PayPal buttons show a safe setup message.
+- Payment buttons show a safe setup message.
 - The intake form does not send data.
 - Booking buttons open the contact drawer.
 
-## PayPal Links
+## Payment Links
 
-Create one PayPal payment link for each package:
+Create one checkout link for each package. Stripe Payment Links is the preferred default, but PayPal, Square, Lemon Squeezy, Gumroad, or another checkout provider can be used if it gives a direct URL.
 
 - `$99 Diagnostic`
 - `$199 Starter Build`
@@ -36,17 +36,17 @@ Create one PayPal payment link for each package:
 Then paste each URL into:
 
 ```js
-paypalLinks: {
-  diagnostic: "PAYPAL_DIAGNOSTIC_URL",
-  starter: "PAYPAL_STARTER_URL",
-  complete: "PAYPAL_COMPLETE_URL"
+paymentLinks: {
+  diagnostic: "DIAGNOSTIC_PAYMENT_URL",
+  starter: "STARTER_PAYMENT_URL",
+  complete: "COMPLETE_PAYMENT_URL"
 }
 ```
 
 Acceptance check:
 
 - Click each payment button.
-- It should redirect to the correct PayPal checkout page.
+- It should redirect to the correct checkout page.
 - No payment button should open the "Payment link pending configuration" drawer after configuration.
 
 ## Helper Script
@@ -56,9 +56,9 @@ You can update the configuration with environment variables instead of editing J
 Dry run:
 
 ```bash
-PAYPAL_DIAGNOSTIC_URL="https://www.paypal.com/..." \
-PAYPAL_STARTER_URL="https://www.paypal.com/..." \
-PAYPAL_COMPLETE_URL="https://www.paypal.com/..." \
+DIAGNOSTIC_PAYMENT_URL="https://buy.stripe.com/..." \
+STARTER_PAYMENT_URL="https://buy.stripe.com/..." \
+COMPLETE_PAYMENT_URL="https://buy.stripe.com/..." \
 FORMSPREE_ENDPOINT_URL="https://formspree.io/f/xxxxxxx" \
 BOOKING_URL="https://calendly.com/..." \
 CONTACT_FALLBACK_URL="https://github.com/kingsleyTom" \
@@ -68,9 +68,9 @@ node scripts/configure_site.mjs
 Write changes:
 
 ```bash
-PAYPAL_DIAGNOSTIC_URL="https://www.paypal.com/..." \
-PAYPAL_STARTER_URL="https://www.paypal.com/..." \
-PAYPAL_COMPLETE_URL="https://www.paypal.com/..." \
+DIAGNOSTIC_PAYMENT_URL="https://buy.stripe.com/..." \
+STARTER_PAYMENT_URL="https://buy.stripe.com/..." \
+COMPLETE_PAYMENT_URL="https://buy.stripe.com/..." \
 FORMSPREE_ENDPOINT_URL="https://formspree.io/f/xxxxxxx" \
 BOOKING_URL="https://calendly.com/..." \
 CONTACT_FALLBACK_URL="https://github.com/kingsleyTom" \
@@ -78,6 +78,7 @@ node scripts/configure_site.mjs --write
 ```
 
 The script only accepts `http://` or `https://` values.
+Legacy `PAYPAL_DIAGNOSTIC_URL`, `PAYPAL_STARTER_URL`, and `PAYPAL_COMPLETE_URL` are still accepted.
 
 ## Formspree Intake Form
 

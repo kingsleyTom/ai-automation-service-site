@@ -19,7 +19,7 @@ required_patterns=(
   "Common questions before starting"
   "Privacy note:"
   "const siteConfig ="
-  "paypalLinks:"
+  "paymentLinks:"
   "formspreeEndpoint"
   "bookingUrl"
 )

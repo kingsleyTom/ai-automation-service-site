@@ -36,7 +36,7 @@ Open `index.html` and find the `siteConfig` object near the top of the `<script>
 
 ```js
 const siteConfig = {
-  paypalLinks: {
+  paymentLinks: {
     diagnostic: "",
     starter: "",
     complete: ""
@@ -49,9 +49,9 @@ const siteConfig = {
 
 Fill these values when ready:
 
-- `paypalLinks.diagnostic`: PayPal link for the $99 diagnostic.
-- `paypalLinks.starter`: PayPal link for the $199 Starter Build.
-- `paypalLinks.complete`: PayPal link for the $499 Complete Workflow.
+- `paymentLinks.diagnostic`: checkout link for the $99 diagnostic.
+- `paymentLinks.starter`: checkout link for the $199 Starter Build.
+- `paymentLinks.complete`: checkout link for the $499 Complete Workflow.
 - `formspreeEndpoint`: Formspree endpoint such as `https://formspree.io/f/xxxxxxx`.
 - `bookingUrl`: Calendly, TidyCal, or another scheduling link.
 - `contactFallbackUrl`: fallback contact URL.
@@ -61,14 +61,16 @@ Until these links are configured, the live page shows safe "configuration needed
 You can also configure the values with the helper script:
 
 ```bash
-PAYPAL_DIAGNOSTIC_URL="https://www.paypal.com/..." \
-PAYPAL_STARTER_URL="https://www.paypal.com/..." \
-PAYPAL_COMPLETE_URL="https://www.paypal.com/..." \
+DIAGNOSTIC_PAYMENT_URL="https://buy.stripe.com/..." \
+STARTER_PAYMENT_URL="https://buy.stripe.com/..." \
+COMPLETE_PAYMENT_URL="https://buy.stripe.com/..." \
 FORMSPREE_ENDPOINT_URL="https://formspree.io/f/xxxxxxx" \
 BOOKING_URL="https://calendly.com/..." \
 CONTACT_FALLBACK_URL="https://github.com/kingsleyTom" \
 node scripts/configure_site.mjs --write
 ```
+
+Stripe, PayPal, Square, Lemon Squeezy, Gumroad, or any provider that gives a direct checkout URL can be used. Legacy `PAYPAL_*` environment variables are still accepted by the helper script.
 
 Run it without `--write` first to preview the change.
 
